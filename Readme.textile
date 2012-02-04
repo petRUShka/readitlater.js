@@ -6,7 +6,7 @@ This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/bl
 ** livejournal.com
 ** habrahabr.ru
 
-=Setting up
+h1. Setting up
 
  Firstly, you should get API Key at page http://readitlaterlist.com/api/signup/. Then you should add such string to your (probably empty) .vimperatorrc:
 
