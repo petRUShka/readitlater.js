@@ -463,6 +463,8 @@ let PLUGIN_INFO =
 	};
 
 	function markAsRead(urls){ // {{{
+		if(urls.length == 0)
+			urls = [buffer.URL];
 		for (let [, url] in Iterator(urls))
 			ListCache.unread.remove(url);
 		ReadItLater.send(urls, echo.bind(null, "Mark as read: " + urls.length));
