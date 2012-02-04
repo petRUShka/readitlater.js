@@ -1,0 +1,7 @@
+This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/blob/master/readitlater.js with some changes.
+
+* Fixed bug with `ril get`
+* Added current page as default argument for `ril read`
+* Add `madd` command that converts url to mobile version for some certain services:
+** livejournal.com
+** habrahabr.ru
