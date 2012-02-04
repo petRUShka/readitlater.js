@@ -1,7 +1,15 @@
 This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/blob/master/readitlater.js with some changes.
 
-* Fixed bug with `ril get`
-* Added current page as default argument for `ril read`
-* Add `madd` command that converts url to mobile version for some certain services:
+* Fixed bug with @ril get@
+* Added current page as default argument for @ril read@
+* Add @madd@ command that converts url to mobile version for some certain services:
 ** livejournal.com
 ** habrahabr.ru
+
+=Setting up
+
+ Firstly, you should get API Key at page http://readitlaterlist.com/api/signup/. Then you should add such string to your (probably empty) .vimperatorrc:
+
+@let g:readitlater_api_key = "api key"@
+
+And then you should save your login and password in standart Firefox password manager on readitlaterlist.com
