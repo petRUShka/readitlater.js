@@ -489,9 +489,12 @@ let PLUGIN_INFO =
 		// habrahabr.ru -> m.habrahabr.ru
 		if(url.match(/:\/\/habrahabr\.ru/))
 		  args["url"] = url.replace("habrahabr.ru", "m.habrahabr.ru").replace(/\.ru\/.+\/(\d+)/, ".ru/post/$1");
+		// livejournal.ru
 		if(url.match(/:\/\/.+\.livejournal\.com/) && !url.match(/:\/\/m\.livejournal\.com/))
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
-
+		// www.trud.ru
+		if(url.match(/:\/\/www.trud.ru/)
+		  args["url"] = url.replace(/\.html$/, "/print");
 		args["title"] = title;
 		addItemByArgs(args);
 	} // }}}
