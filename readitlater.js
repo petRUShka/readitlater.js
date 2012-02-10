@@ -493,7 +493,7 @@ let PLUGIN_INFO =
 		if(url.match(/:\/\/.+\.livejournal\.com/) && !url.match(/:\/\/m\.livejournal\.com/))
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
 		// www.trud.ru
-		if(url.match(/:\/\/www.trud.ru/)
+		if(url.match(/:\/\/www.trud.ru/))
 		  args["url"] = url.replace(/\.html$/, "/print");
 		args["title"] = title;
 		addItemByArgs(args);
