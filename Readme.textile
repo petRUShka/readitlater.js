@@ -7,6 +7,8 @@ This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/bl
 ** habrahabr.ru
 ** www.trud.ru
 ** lenta.ru
+** roem.ru
+** www.guardian.co.uk
 
 h1. Setting up
 

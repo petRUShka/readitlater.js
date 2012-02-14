@@ -498,6 +498,14 @@ let PLUGIN_INFO =
 		// lenta.ru
 		if(url.match(/:\/\/lenta.ru/))
 		  args["url"] = url.replace(/\/?$/, "/_Printed.htm");
+	        // roem.ru
+		if(url.match(/:\/\/roem.ru/) && !url.match("reom.ru/pda"))
+		  args["url"] = url.replace(/\/\?.*/, "").replace(/\/\d{4}\/\d{2}\/\d{2}\/\D+(\d+)$/, "/pda/?element_id=$1");
+		// www.guardian.co.uk
+		if(url.match(/guardian.co.uk\//) && !url.match("print"))
+		  args["url"] = url.replace(/$/, "/print");
+		// TODO: http://www.vedomosti.ru/politics/news/1502544/kurator_pokoleniya
+		// TODO: ttp://www.vedomosti.ru/politics/print/2012/02/14/1502544
 		args["title"] = title;
 		addItemByArgs(args);
 	} // }}}
