@@ -487,8 +487,9 @@ let PLUGIN_INFO =
 		if(!url)
 		  url = buffer.URL;
 		// habrahabr.ru -> m.habrahabr.ru
+		// http://m.habrahabr.ru/post/138068/
 		if(url.match(/:\/\/habrahabr\.ru/))
-		  args["url"] = url.replace("habrahabr.ru", "m.habrahabr.ru").replace(/\.ru\/.+\/(\d+)/, ".ru/post/$1");
+		  args["url"] = url.replace("habrahabr.ru", "m.habrahabr.ru").replace(/\.ru\/.+\/(\d+)/, ".ru/post/$1").replace(/#habracut$/, "");
 		// livejournal.ru
 		if(url.match(/:\/\/.+\.livejournal\.com/) && !url.match(/:\/\/m\.livejournal\.com/))
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
