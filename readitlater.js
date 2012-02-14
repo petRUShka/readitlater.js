@@ -495,6 +495,9 @@ let PLUGIN_INFO =
 		// www.trud.ru
 		if(url.match(/:\/\/www.trud.ru/))
 		  args["url"] = url.replace(/\.html$/, "/print");
+		// lenta.ru
+		if(url.match(/:\/\/lenta.ru/))
+		  args["url"] = url.replace(/\/?$/, "/_Printed.htm");
 		args["title"] = title;
 		addItemByArgs(args);
 	} // }}}
