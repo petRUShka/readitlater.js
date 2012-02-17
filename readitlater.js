@@ -491,8 +491,12 @@ let PLUGIN_INFO =
 		if(url.match(/:\/\/habrahabr\.ru/))
 		  args["url"] = url.replace("habrahabr.ru", "m.habrahabr.ru").replace(/\.ru\/.+\/(\d+)/, ".ru/post/$1").replace(/#habracut$/, "");
 		// livejournal.ru
-		if(url.match(/:\/\/.+\.livejournal\.com/) && !url.match(/:\/\/m\.livejournal\.com/))
+		if(url.match(/:\/\/.+\.livejournal\.(com|ru)/) && !url.match(/:\/\/m\.livejournal\.(com|ru)/)){
+		  // blog post
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
+		  // theme
+		  args["url"] = url.replace(/www.livejournal.ru\/themes\/id\/(\d+)$/, "m.livejournal.com/themes/all/$1");
+		}
 		// www.trud.ru
 		if(url.match(/:\/\/www.trud.ru/))
 		  args["url"] = url.replace(/\.html$/, "/print");
