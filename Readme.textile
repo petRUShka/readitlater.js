@@ -9,6 +9,7 @@ This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/bl
 ** lenta.ru
 ** roem.ru
 ** www.guardian.co.uk
+** beta.news.rambler.ru
 
 h1. Setting up
 
