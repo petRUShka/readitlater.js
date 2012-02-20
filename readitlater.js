@@ -494,7 +494,7 @@ let PLUGIN_INFO =
 		  // blog post
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
 		  // theme
-		  args["url"] = url.replace(/www.livejournal.ru\/themes\/id\/(\d+)$/, "m.livejournal.com/themes/all/$1");
+		  args["url"] = args["url"].replace(/www.livejournal.ru\/themes\/id\/(\d+)$/, "m.livejournal.com/themes/all/$1");
 		}
 		// www.trud.ru
 		if(url.match(/:\/\/www.trud.ru/))
