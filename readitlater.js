@@ -13,6 +13,44 @@ let PLUGIN_INFO =
 	<minVersion>3.0</minVersion>
 	<author mail="ninja.tottori@gmail.com" homepage="http://twitter.com/ninja_tottori">ninja.tottori</author>
 	<updateURL>https://github.com/vimpr/vimperator-plugins/raw/master/readitlater.js</updateURL>
+	<detail lang="en"><![CDATA[
+	  Q. What is this?
+	    Is a plug-in for comfortable use A.Read it Later
+
+	  Firstly, you should get API Key at page http://readitlaterlist.com/api/signup/. Then you should add such string to your (probably empty) .vimperatorrc:
+		let g:readitlater_api_key = "api key"
+
+	  And then you should save your login and password in standart Firefox password manager on readitlaterlist.com
+
+	  == Command ==
+	  :ril
+	  :ril add
+		To register the title and url of the page you're looking at
+		You can also edit and register it so choose appropriately url, a title as an option.
+		In addition, the effectiveness of Completion URL.
+		URL completion is let g:readitlater_complete = "slf" you can choose a supplement to use it as readitlater_complete = "slf".
+
+	  :ril get
+		You have to get the information on the page cache has been registered.
+		The default is 50
+			let g:readitlater_get_count = 100
+		You can change the number or retrieve.
+		so plugin goes to sync over no questions asked after add, open, has been read, you might want to not increase the number profusely.
+
+	  :ril open
+		So come out to completion is a list of readitlater <Space>, will open in a new tab and select it to run (<Space>) the URL of your choice.
+		This is displayed as read only and to supplement and give ril open!!.
+
+		In addition, you can go to read at the same time and open flag.
+		  let g:readitlater_open_as_read = 1
+		I think the first time you should do it by yourself and so does not contain data in a cache: you must help plugin with ril get.
+
+	  :ril read
+		Is a sub-command flag for the marking curent url as read.
+
+	  :ril stats
+		Information can be taken since, list, unread, the read
+	]]></detail>
 	<detail lang="ja"><![CDATA[
 
 	Q.これは何？
