@@ -508,8 +508,8 @@ let PLUGIN_INFO =
 		// www.guardian.co.uk
 		if(url.match(/guardian.co.uk\//) && !url.match("print"))
 		  args["url"] = url.replace(/$/, "/print");
-		if(url.match("beta.news.rambler.ru") && !url.match("m.rambler.ru"))
-		  args["url"] = url.replace(/beta.news.rambler.ru\/(\d+)\/.+/, "m.rambler.ru/news/head/$1/");
+		if(url.match("news.rambler.ru") && !url.match("m.rambler.ru"))
+		  args["url"] = url.replace(/news.rambler.ru\/(\d+)\/.+/, "m.rambler.ru/news/head/$1/");
 		// TODO: http://www.vedomosti.ru/politics/news/1502544/kurator_pokoleniya
 		// TODO: ttp://www.vedomosti.ru/politics/print/2012/02/14/1502544
 		args["title"] = title;
