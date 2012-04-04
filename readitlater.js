@@ -134,7 +134,7 @@ let PLUGIN_INFO =
 				}
 			),
 
-			new Command(["madd","ma"], "Add a mobile version of page to a user's list",
+			new Command(["madd","m"], "Add a mobile version of page to a user's list",
 				function (args) {
 					addItemByArgsWithSubstitution(args);
 				},{
