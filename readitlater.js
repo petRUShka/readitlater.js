@@ -13,6 +13,44 @@ let PLUGIN_INFO =
 	<minVersion>3.0</minVersion>
 	<author mail="ninja.tottori@gmail.com" homepage="http://twitter.com/ninja_tottori">ninja.tottori</author>
 	<updateURL>https://github.com/vimpr/vimperator-plugins/raw/master/readitlater.js</updateURL>
+	<detail lang="en"><![CDATA[
+	  Q. What is this?
+	    Is a plug-in for comfortable use A.Read it Later
+
+	  Firstly, you should get API Key at page http://readitlaterlist.com/api/signup/. Then you should add such string to your (probably empty) .vimperatorrc:
+		let g:readitlater_api_key = "api key"
+
+	  And then you should save your login and password in standart Firefox password manager on readitlaterlist.com
+
+	  == Command ==
+	  :ril
+	  :ril add
+		To register the title and url of the page you're looking at
+		You can also edit and register it so choose appropriately url, a title as an option.
+		In addition, the effectiveness of Completion URL.
+		URL completion is let g:readitlater_complete = "slf" you can choose a supplement to use it as readitlater_complete = "slf".
+
+	  :ril get
+		You have to get the information on the page cache has been registered.
+		The default is 50
+			let g:readitlater_get_count = 100
+		You can change the number or retrieve.
+		so plugin goes to sync over no questions asked after add, open, has been read, you might want to not increase the number profusely.
+
+	  :ril open
+		So come out to completion is a list of readitlater <Space>, will open in a new tab and select it to run (<Space>) the URL of your choice.
+		This is displayed as read only and to supplement and give ril open!!.
+
+		In addition, you can go to read at the same time and open flag.
+		  let g:readitlater_open_as_read = 1
+		I think the first time you should do it by yourself and so does not contain data in a cache: you must help plugin with ril get.
+
+	  :ril read
+		Is a sub-command flag for the marking curent url as read.
+
+	  :ril stats
+		Information can be taken since, list, unread, the read
+	]]></detail>
 	<detail lang="ja"><![CDATA[
 
 	Q.これは何？
@@ -96,7 +134,7 @@ let PLUGIN_INFO =
 				}
 			),
 
-			new Command(["madd","ma"], "Add a mobile version of page to a user's list",
+			new Command(["madd","m"], "Add a mobile version of page to a user's list",
 				function (args) {
 					addItemByArgsWithSubstitution(args);
 				},{
@@ -494,7 +532,7 @@ let PLUGIN_INFO =
 		  // blog post
 		  args["url"] = url.replace(/:\/\/(.+).livejournal.com\/(\d+).html/, "://m.livejournal.com/read/user/$1/$2");
 		  // theme
-		  args["url"] = url.replace(/www.livejournal.ru\/themes\/id\/(\d+)$/, "m.livejournal.com/themes/all/$1");
+		  args["url"] = args["url"].replace(/www.livejournal.ru\/themes\/id\/(\d+)$/, "m.livejournal.com/themes/all/$1");
 		}
 		// www.trud.ru
 		if(url.match(/:\/\/www.trud.ru/))
@@ -504,12 +542,12 @@ let PLUGIN_INFO =
 		  args["url"] = url.replace(/\/?$/, "/_Printed.htm");
 	        // roem.ru
 		if(url.match(/:\/\/roem.ru/) && !url.match("reom.ru/pda"))
-		  args["url"] = url.replace(/\/\?.*/, "").replace(/\/\d{4}\/\d{2}\/\d{2}\/\D+(\d+)$/, "/pda/?element_id=$1");
+		  args["url"] = url.replace(/\/(\?.*)?$/, "").replace(/\/\d{4}\/\d{2}\/\d{2}\/\D+(\d+)$/, "/pda/?element_id=$1");
 		// www.guardian.co.uk
 		if(url.match(/guardian.co.uk\//) && !url.match("print"))
 		  args["url"] = url.replace(/$/, "/print");
-		if(url.match("beta.news.rambler.ru") && !url.match("m.rambler.ru"))
-		  args["url"] = url.replace(/beta.news.rambler.ru\/(\d+)\/.+/, "m.rambler.ru/news/head/$1/");
+		if(url.match("news.rambler.ru") && !url.match("m.rambler.ru"))
+		  args["url"] = url.replace(/news.rambler.ru\/(\d+)\/.+/, "m.rambler.ru/news/head/$1/");
 		// TODO: http://www.vedomosti.ru/politics/news/1502544/kurator_pokoleniya
 		// TODO: ttp://www.vedomosti.ru/politics/print/2012/02/14/1502544
 		args["title"] = title;
