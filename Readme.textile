@@ -11,6 +11,10 @@ This is original "readitlater.js":https://github.com/vimpr/vimperator-plugins/bl
 ** www.guardian.co.uk
 ** beta.news.rambler.ru
 
+h1. Installing
+
+Put @readitlater.js@ and @_libly.js@ into @~/.vimperator/plugin/@.
+
 h1. Setting up
 
  Firstly, you should get API Key at page http://readitlaterlist.com/api/signup/. Then you should add such string to your (probably empty) .vimperatorrc:
